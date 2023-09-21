@@ -1,0 +1,32 @@
+<div class="sidebar">
+	<center>
+		<div class="sidebar-item">
+		<?php if(isset($_SESSION['id'])){$Player = getPlayerbyID($_SESSION['id'], $db2);?>
+		<div class="account">
+			<dt>Hello, <?php echo $Player[0]['mid']; ?></dt></br>
+			<dt>AP: <?php echo $Player[0]['pvalues']; ?></dt>
+			<a href="freeap.php">[Free AP]</a><a href="#">[Buy AP]</a>
+			</br>
+			
+			<a href="#" style="float: left; padding: 5; color: red; text-decoration: none;"> Reset password </a>
+			<a href="logout.php" style="float: right; padding: 5; color: red; text-decoration: none;"> Logout </a>
+		</div>
+		
+		<?php }else{ ?>
+			<form action=""  method="post">
+				<?php echo $lerror; ?>
+				<input class="form-control" type="text" placeholder="Username" name="luser">
+				<input class="form-control" type="password" placeholder="Password" name="lpass">
+				<input type="submit" class="btn btn-aqred" name="lsubmit" value="LOGIN"/>
+			</form>
+			<?php } ?>
+		</div>
+		</br>
+		<div class="sidebar-item">
+			<a href="freeap.php"><img src="buttons\freeAP.png"></a>
+			<img src="buttons\buyAP.png">
+			<img src="buttons\help.png">
+			<img src="buttons\donate.png">
+		</div>	
+	</center>
+</div>
